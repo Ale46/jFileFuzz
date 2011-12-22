@@ -8,13 +8,21 @@
   <style type="text/css">
     body {
       margin-top: 1.0em;
-      background-color: #b54121;
+background: rgb(253,251,249); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(253,251,249,1) 0%, rgba(235,233,229,1) 40%, rgba(206,206,200,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(253,251,249,1)), color-stop(40%,rgba(235,233,229,1)), color-stop(100%,rgba(206,206,200,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(253,251,249,1) 0%,rgba(235,233,229,1) 40%,rgba(206,206,200,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(253,251,249,1) 0%,rgba(235,233,229,1) 40%,rgba(206,206,200,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(253,251,249,1) 0%,rgba(235,233,229,1) 40%,rgba(206,206,200,1) 100%); /* IE10+ */
+background: radial-gradient(center, ellipse cover,  rgba(253,251,249,1) 0%,rgba(235,233,229,1) 40%,rgba(206,206,200,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfbf9', endColorstr='#cecec8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
       font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
+
     }
     #container {
       margin: 0 auto;
-      width: 700px;
+      width: 950px;
     }
     h1 { font-size: 3.8em; color: #4abede; margin-bottom: 3px; }
     h1 .small { font-size: 0.4em; }
@@ -36,28 +44,26 @@
   <div id="container">
 
     <div class="download">
-      <a href="https://github.com/Ale46/jFileFuzz/zipball/master">
+      <a href="https://github.com/downloads/Ale46/jFileFuzz/jFileFuzz.zip">
         <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/Ale46/jFileFuzz/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+  	
     </div>
 
     <h1><a href="https://github.com/Ale46/jFileFuzz">jFileFuzz</a>
-      <span class="small">by <a href="https://github.com/Ale46">Ale46</a></span></h1>
+      </h1>
 
     <div class="description">
-      jFileFuzz is a very simple (and maybe useless) file fuzzer
+      <p>jFileFuzz is a very simple (and maybe useless) file fuzzer.</p>
+	  Main features:
+	<ul>
+	<li>Different method of fuzz</li>
+	<li>Test and log the activity of the attacked software with the fuzzed files</li>
+	<li>Multiplatform</li>
+	</ul>
     </div>
 
     
-      <p>jFileFuzz is a very simple (and maybe useless) file fuzzer.
-
-Main features:
-
-Different method of fuzz
-Test and log the activity of the attacked software with the fuzzed files
-Multiplatform
-
+      <p><pre>
 This is the help.. Readme ftw!
 
 Utility switch:
@@ -163,7 +169,7 @@ Replace the first 20 bytes of test.pdf with 00 value with FF
 jfuzz --refuzz 00rFF --file test.pdf --rn 20
 
 Test the application C:\reader.exe with the fuzzed files located on C:\pdfs\
-jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe</p>
+jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe</pre></p>
     
 
     
@@ -172,19 +178,26 @@ jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe</p>
 
     
       <h2>License</h2>
-      <p>GPL</p>
+      <p><a href="http://www.gnu.org/licenses/gpl.html">GPL</a></p>
     
 
     
       <h2>Authors</h2>
-      <p>Ale46<br/>      </p>
+      <p>Ale46
+	 <a href="https://twitter.com/Ale467" class="twitter-follow-button" data-show-count="false">Follow @Ale467</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<br/>      </p>
     
 
     
 
     <h2>Download</h2>
     <p>
-      You can download this project in either
+	You can download the compilere project <a href="https://github.com/downloads/Ale46/jFileFuzz/jFileFuzz.zip">HERE</a>
+	</p>
+	<p>
+	
+      You can download this source project code in either
       <a href="https://github.com/Ale46/jFileFuzz/zipball/master">zip</a> or
       <a href="https://github.com/Ale46/jFileFuzz/tarball/master">tar formats.
     </p>
@@ -194,7 +207,7 @@ jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe</p>
     </p>
 
     <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/Ale46/jFileFuzz">Ale46/jFileFuzz</a>
+      view the source code on GitHub : <a href="https://github.com/Ale46/jFileFuzz">Ale46/jFileFuzz</a>
     </div>
 
   </div>
