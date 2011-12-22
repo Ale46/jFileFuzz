@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+
+  <title>Ale46/jFileFuzz @ GitHub</title>
+
+  <style type="text/css">
+    body {
+      margin-top: 1.0em;
+      background-color: #b54121;
+      font-family: Helvetica, Arial, FreeSans, san-serif;
+      color: #ffffff;
+    }
+    #container {
+      margin: 0 auto;
+      width: 700px;
+    }
+    h1 { font-size: 3.8em; color: #4abede; margin-bottom: 3px; }
+    h1 .small { font-size: 0.4em; }
+    h1 a { text-decoration: none }
+    h2 { font-size: 1.5em; color: #4abede; }
+    h3 { text-align: center; color: #4abede; }
+    a { color: #4abede; }
+    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
+    .download { float: right; }
+    pre { background: #000; color: #fff; padding: 15px;}
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .footer { text-align:center; padding-top:30px; font-style: italic; }
+  </style>
+</head>
+
+<body>
+  <a href="https://github.com/Ale46/jFileFuzz"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+  <div id="container">
+
+    <div class="download">
+      <a href="https://github.com/Ale46/jFileFuzz/zipball/master">
+        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
+      <a href="https://github.com/Ale46/jFileFuzz/tarball/master">
+        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
+    </div>
+
+    <h1><a href="https://github.com/Ale46/jFileFuzz">jFileFuzz</a>
+      <span class="small">by <a href="https://github.com/Ale46">Ale46</a></span></h1>
+
+    <div class="description">
+      jFileFuzz is a very simple (and maybe useless) file fuzzer
+    </div>
+
+    
+      <p>jFileFuzz is a very simple (and maybe useless) file fuzzer.
+
+Main features:
+
+Different method of fuzz
+Test and log the activity of the attacked software with the fuzzed files
+Multiplatform
+
+This is the help.. Readme ftw!
+
+Utility switch:
+
+--print  _int   	Print file in HEX format with specified column number.
+--size   _bool  	If set print the size of file.
+
+Essential fuzzing switch:
+
+--file   _String	Set the file you want to fuzz.
+--rofuzz _String	Overwrite data at random position.
+--rifuzz _String	Insert data at random position.
+--ifuzz  _String	Insert data from "start" to "end" .
+--ofuzz  _String	Overwrite data from "start" to "end".
+--refuzz _String	Replace selected data with custom data.
+
+Essential switch for random fuzz:
+
+--n      _int   	Set the number of genereted fuzzed files.
+--rn     _int   	Set the number of insert\overwrite.
+--rp     _int   	Set the percentage of insert\overwrite.
+
+Essential switch for insert fuzz:
+
+--start  _int   	Data will be inserted from this position.
+--end    _int   	Data will be inserted behind this position.
+
+Essential switch for debug test:
+
+--debug  _bool  	Start debug test.
+--dir    _String	Set directory where the fuzzed files are located.
+--prog   _String	Set the software to attack.
+--timeout _int	Set time to wait before exit the application. (ms value, default 3500)
+
+Generally examples:
+
+Fuzz of the file "test.pdf" that overwrite random bytes with FF for 30 times generating 100 differents fuzzed files
+jfuzz --file test.pdf --rofuzz FF --rn 30 --n 100
+
+Fuzz of the file "test.pdf" that insert in random position FF for 30 times generating 100 differents fuzzed files
+jfuzz --file test.pdf --rifuzz FF --rn 30 --n 100
+
+Fuzz of the file "test.pdf" inserting FF from the 31st byte to the 42nd byte
+jfuzz --file test.pdf --ifuzz FF --start 31 --end 42
+
+Fuzz of the file "test.pdf" overwriting FF from the 31st byte to the 42nd byte
+jfuzz --file test.pdf --ofuzz FF --start 31 --end 42
+
+Replace the first 20 bytes of test.pdf with 00 value with FF
+jfuzz --refuzz 00rFF --file test.pdf --rn 20
+
+Test the application C:\reader.exe with the fuzzed files located on C:\pdfs\
+jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe
+This is the help.. Readme ftw!
+
+Utility switch:
+
+--print  _int   	Print file in HEX format with specified column number.
+--size   _bool  	If set print the size of file.
+
+Essential fuzzing switch:
+
+--file   _String	Set the file you want to fuzz.
+--rofuzz _String	Overwrite data at random position.
+--rifuzz _String	Insert data at random position.
+--ifuzz  _String	Insert data from "start" to "end" .
+--ofuzz  _String	Overwrite data from "start" to "end".
+--refuzz _String	Replace selected data with custom data.
+
+Essential switch for random fuzz:
+
+--n      _int   	Set the number of genereted fuzzed files.
+--rn     _int   	Set the number of insert\overwrite.
+--rp     _int   	Set the percentage of insert\overwrite.
+
+Essential switch for insert fuzz:
+
+--start  _int   	Data will be inserted from this position.
+--end    _int   	Data will be inserted behind this position.
+
+Essential switch for debug test:
+
+--debug  _bool  	Start debug test.
+--dir    _String	Set directory where the fuzzed files are located.
+--prog   _String	Set the software to attack.
+--timeout _int		Set time to wait before exit the application. (ms value, default 3500)
+
+Generally examples:
+
+Fuzz of the file "test.pdf" that overwrite random bytes with FF for 30 times generating 100 differents fuzzed files
+jfuzz --file test.pdf --rofuzz FF --rn 30 --n 100
+
+Fuzz of the file "test.pdf" that insert in random position FF for 30 times generating 100 differents fuzzed files
+jfuzz --file test.pdf --rifuzz FF --rn 30 --n 100
+
+Fuzz of the file "test.pdf" inserting FF from the 31st byte to the 42nd byte
+jfuzz --file test.pdf --ifuzz FF --start 31 --end 42
+
+Fuzz of the file "test.pdf" overwriting FF from the 31st byte to the 42nd byte
+jfuzz --file test.pdf --ofuzz FF --start 31 --end 42
+
+Replace the first 20 bytes of test.pdf with 00 value with FF
+jfuzz --refuzz 00rFF --file test.pdf --rn 20
+
+Test the application C:\reader.exe with the fuzzed files located on C:\pdfs\
+jfuzz --debug --dir C:\pdfs\ --prog C:\reader.exe</p>
+    
+
+    
+
+    
+
+    
+      <h2>License</h2>
+      <p>GPL</p>
+    
+
+    
+      <h2>Authors</h2>
+      <p>Ale46<br/>      </p>
+    
+
+    
+
+    <h2>Download</h2>
+    <p>
+      You can download this project in either
+      <a href="https://github.com/Ale46/jFileFuzz/zipball/master">zip</a> or
+      <a href="https://github.com/Ale46/jFileFuzz/tarball/master">tar formats.
+    </p>
+    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+      by running:
+      <pre>$ git clone git://github.com/Ale46/jFileFuzz</pre>
+    </p>
+
+    <div class="footer">
+      get the source code on GitHub : <a href="https://github.com/Ale46/jFileFuzz">Ale46/jFileFuzz</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
